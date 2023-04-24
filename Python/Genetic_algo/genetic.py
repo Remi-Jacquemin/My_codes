@@ -8,13 +8,15 @@ pygame.init()
 white = (255, 255, 255)
 black = (0, 0, 0)
 gray = (128, 128, 128)
+blue = (0, 0, 255)
+red = (255, 0, 0)
 
 # Nombre de nœuds et de liaisons
 n = 30
 m = 50
 
 # Calcul de la taille des nœuds en fonction du nombre de nœuds
-node_size = max(1, int(500 / n))
+node_size = max(1, int(300 / n))
 
 # Dimensions de la fenêtre
 margin = 50
@@ -53,14 +55,14 @@ while running:
 
     # Dessin des nœuds
     for i in range(n):
-        pygame.draw.circle(screen, black, nodes[i], node_size)
+        pygame.draw.circle(screen, red, nodes[i], node_size)
 
     # Dessin des liaisons
     for edge in edges:
         i, j = edge
         x1, y1 = nodes[i]
         x2, y2 = nodes[j]
-        pygame.draw.line(screen, gray, (x1, y1), (x2, y2), 2)
+        pygame.draw.line(screen, blue, (x1, y1), (x2, y2), 2)
 
     # Mise à jour de l'affichage
     pygame.display.flip()
